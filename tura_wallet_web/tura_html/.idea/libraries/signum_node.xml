@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="signum-node">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/signum-node.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

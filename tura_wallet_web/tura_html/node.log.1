@@ -1,0 +1,75 @@
+[INFO] 2023-04-19 20:10:30 brs.db.sql.Db - Running flyway migration
+[INFO] 2023-04-19 20:10:30 brs.db.sql.Db - Using SQL Backend with Dialect MariaDB
+[INFO] 2023-04-19 20:10:31 brs.BlockchainProcessorImpl - Genesis block already in database
+[INFO] 2023-04-19 20:10:31 brs.BlockchainProcessorImpl - Last block height: 328159, baseTarget: 692255916556288, averageCommitmentNQT 10000
+[INFO] 2023-04-19 20:10:31 brs.peer.Peers - P2P max connections: 20
+[WARNING] 2023-04-19 20:10:37 brs.peer.Peers - Tried to establish UPnP, but it was denied by the network.
+[INFO] 2023-04-19 20:10:37 brs.peer.GetNextBlocks - P2P max number of blocks: 720
+[SEVERE] 2023-04-19 20:10:37 brs.peer.Peers - Failed to start peer networking server
+java.io.IOException: Failed to bind to /0.0.0.0:8123
+	at org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:345)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:305)
+	at org.eclipse.jetty.server.Server.lambda$doStart$0(Server.java:401)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:397)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:93)
+	at brs.peer.Peers$Init.lambda$init$1(Peers.java:380)
+	at brs.util.ThreadPool.lambda$runAll$2(ThreadPool.java:163)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.BindException: Address already in use
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:459)
+	at java.base/sun.nio.ch.Net.bind(Net.java:448)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227)
+	at org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:340)
+	... 17 more
+[SEVERE] 2023-04-19 20:10:37 brs.http.API - Failed to start API server
+java.io.IOException: Failed to bind to /0.0.0.0:6876
+	at org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:345)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:305)
+	at org.eclipse.jetty.server.Server.lambda$doStart$0(Server.java:401)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:397)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:93)
+	at brs.http.API.lambda$new$2(API.java:199)
+	at brs.util.ThreadPool.lambda$runAll$2(ThreadPool.java:163)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.BindException: Address already in use
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:459)
+	at java.base/sun.nio.ch.Net.bind(Net.java:448)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227)
+	at org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:340)
+	... 17 more
+[SEVERE] 2023-04-19 20:10:37 brs.Burst - Errors running startup tasks:
+java.io.IOException: Failed to bind to /0.0.0.0:8123
+java.io.IOException: Failed to bind to /0.0.0.0:6876
+
+java.lang.RuntimeException: Errors running startup tasks:
+java.io.IOException: Failed to bind to /0.0.0.0:8123
+java.io.IOException: Failed to bind to /0.0.0.0:6876
+
+	at brs.util.ThreadPool.runAll(ThreadPool.java:181)
+	at brs.util.ThreadPool.start(ThreadPool.java:88)
+	at brs.Burst.loadWallet(Burst.java:284)
+	at brs.Burst.init(Burst.java:169)
+	at brs.Burst.main(Burst.java:153)
+	at signum.Launcher.main(Launcher.java:52)

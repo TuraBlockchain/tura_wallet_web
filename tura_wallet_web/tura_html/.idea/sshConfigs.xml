@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" connectionConfig="{&quot;serverAliveInterval&quot;:300}" host="43.135.26.222" id="17762ac3-3bdc-418f-b6f0-7e1b82951f00" port="22" customName="signum" nameFormat="CUSTOM" username="root" useOpenSSHConfig="true">
+        <option name="customName" value="signum" />
+      </sshConfig>
+    </configs>
+  </component>
+</project>

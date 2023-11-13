@@ -1,0 +1,163 @@
+7月 31, 2022 11:24:21 下午 signum.Launcher main
+严重: Cannot start GUI as running in headless environment
+7月 31, 2022 11:24:21 下午 brs.Burst loadProperties
+信息: Initializing Signum Node version v3.3.3
+7月 31, 2022 11:24:21 下午 brs.Burst loadProperties
+信息: Configurations from folder ./conf
+Bad level value for property: .level
+[INFO] 2022-07-31 23:24:21 LoggerConfigurator - logging enabled
+[INFO] 2022-07-31 23:24:22 org.ehcache.core.EhcacheManager - Cache 'account' created in EhcacheManager.
+[INFO] 2022-07-31 23:24:22 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[INFO] 2022-07-31 23:24:22 com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.mariadb.jdbc.MariaDbConnection@548e6d58
+[INFO] 2022-07-31 23:24:22 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[INFO] 2022-07-31 23:24:22 brs.db.sql.Db - Running flyway migration
+[INFO] 2022-07-31 23:24:22 org.flywaydb.core.internal.license.VersionPrinter - Flyway Community Edition 8.2.0 by Redgate
+[INFO] 2022-07-31 23:24:22 org.flywaydb.core.internal.database.base.BaseDatabaseType - Database: jdbc:mariadb://localhost:3306/signum_testnet (MySQL 10.3)
+[INFO] 2022-07-31 23:24:22 org.flywaydb.core.internal.command.DbValidate - Successfully validated 12 migrations (execution time 00:00.042s)
+[INFO] 2022-07-31 23:24:22 org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory - Creating Schema History table `signum_testnet`.`flyway_schema_history` ...
+[INFO] 2022-07-31 23:24:22 org.flywaydb.core.internal.command.DbMigrate - Current version of schema `signum_testnet`: << Empty Schema >>
+[INFO] 2022-07-31 23:24:22 org.flywaydb.core.internal.command.DbMigrate - Migrating schema `signum_testnet` to version "1 - initial"
+[INFO] 2022-07-31 23:24:25 org.flywaydb.core.internal.command.DbMigrate - Migrating schema `signum_testnet` to version "2 - indirect incoming"
+[INFO] 2022-07-31 23:24:25 org.flywaydb.core.internal.command.DbMigrate - Migrating schema `signum_testnet` to version "3 - indirect incoming index"
+[INFO] 2022-07-31 23:24:25 org.flywaydb.core.internal.command.DbMigrate - Migrating schema `signum_testnet` to version "4 - subscription index"
+[INFO] 2022-07-31 23:24:25 org.flywaydb.core.internal.command.DbMigrate - Migrating schema `signum_testnet` to version "5 - at code hash"
+[INFO] 2022-07-31 23:24:25 org.flywaydb.core.internal.command.DbMigrate - Migrating schema `signum_testnet` to version "5.1 - GenerateAtHashes"
+[INFO] 2022-07-31 23:24:25 org.flywaydb.core.internal.command.DbMigrate - Migrating schema `signum_testnet` to version "5.2 - at ap code"
+[INFO] 2022-07-31 23:24:25 org.flywaydb.core.internal.command.DbMigrate - Migrating schema `signum_testnet` to version "6 - asset upgrade"
+[INFO] 2022-07-31 23:24:25 org.flywaydb.core.internal.command.DbMigrate - Migrating schema `signum_testnet` to version "6.1 - indirect upgrade"
+[INFO] 2022-07-31 23:24:25 org.flywaydb.core.internal.command.DbMigrate - Migrating schema `signum_testnet` to version "6.2 - tx indices"
+[INFO] 2022-07-31 23:24:25 org.flywaydb.core.internal.command.DbMigrate - Migrating schema `signum_testnet` to version "6.3 - subscription latest index"
+[INFO] 2022-07-31 23:24:25 org.flywaydb.core.internal.command.DbMigrate - Migrating schema `signum_testnet` to version "6.4 - FixBurntAmount"
+[INFO] 2022-07-31 23:24:25 org.flywaydb.core.internal.command.DbMigrate - Successfully applied 12 migrations to schema `signum_testnet`, now at version v6.4 (execution time 00:02.744s)
+[INFO] 2022-07-31 23:24:25 brs.db.sql.Db - Using SQL Backend with Dialect MariaDB
+[INFO] 2022-07-31 23:24:26 brs.BlockchainProcessorImpl - Genesis block not in database, starting from scratch
+[INFO] 2022-07-31 23:24:26 brs.peer.Peers - P2P max connections: 20
+[WARNING] 2022-07-31 23:24:32 brs.peer.Peers - Tried to establish UPnP, but it was denied by the network.
+[INFO] 2022-07-31 23:24:32 brs.peer.GetNextBlocks - P2P max number of blocks: 720
+[SEVERE] 2022-07-31 23:24:33 brs.http.API - Failed to start API server
+java.io.IOException: Failed to bind to /0.0.0.0:6876
+	at org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:345)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:305)
+	at org.eclipse.jetty.server.Server.lambda$doStart$0(Server.java:401)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:397)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:93)
+	at brs.http.API.lambda$new$2(API.java:199)
+	at brs.util.ThreadPool.lambda$runAll$2(ThreadPool.java:163)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.net.BindException: 地址已在使用
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:455)
+	at java.base/sun.nio.ch.Net.bind(Net.java:447)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227)
+	at org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:340)
+	... 17 more
+Exception in thread "Thread-6" java.lang.RuntimeException: java.io.IOException: Failed to bind to /0.0.0.0:6876
+	at brs.http.API.lambda$new$2(API.java:203)
+	at brs.util.ThreadPool.lambda$runAll$2(ThreadPool.java:163)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.io.IOException: Failed to bind to /0.0.0.0:6876
+	at org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:345)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:305)
+	at org.eclipse.jetty.server.Server.lambda$doStart$0(Server.java:401)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:397)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:93)
+	at brs.http.API.lambda$new$2(API.java:199)
+	... 2 more
+Caused by: java.net.BindException: 地址已在使用
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:455)
+	at java.base/sun.nio.ch.Net.bind(Net.java:447)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227)
+	at org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:340)
+	... 17 more
+[SEVERE] 2022-07-31 23:24:33 brs.peer.Peers - Failed to start peer networking server
+java.io.IOException: Failed to bind to /0.0.0.0:8123
+	at org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:345)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:305)
+	at org.eclipse.jetty.server.Server.lambda$doStart$0(Server.java:401)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:397)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:93)
+	at brs.peer.Peers$Init.lambda$init$1(Peers.java:380)
+	at brs.util.ThreadPool.lambda$runAll$2(ThreadPool.java:163)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.net.BindException: 地址已在使用
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:455)
+	at java.base/sun.nio.ch.Net.bind(Net.java:447)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227)
+	at org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:340)
+	... 17 more
+Exception in thread "Thread-5" java.lang.RuntimeException: java.io.IOException: Failed to bind to /0.0.0.0:8123
+	at brs.peer.Peers$Init.lambda$init$1(Peers.java:385)
+	at brs.util.ThreadPool.lambda$runAll$2(ThreadPool.java:163)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.io.IOException: Failed to bind to /0.0.0.0:8123
+	at org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:345)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:305)
+	at org.eclipse.jetty.server.Server.lambda$doStart$0(Server.java:401)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:397)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:93)
+	at brs.peer.Peers$Init.lambda$init$1(Peers.java:380)
+	... 2 more
+Caused by: java.net.BindException: 地址已在使用
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:455)
+	at java.base/sun.nio.ch.Net.bind(Net.java:447)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:227)
+	at org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:340)
+	... 17 more
+[SEVERE] 2022-07-31 23:24:33 brs.Burst - Errors running startup tasks:
+java.io.IOException: Failed to bind to /0.0.0.0:6876
+java.io.IOException: Failed to bind to /0.0.0.0:8123
+
+java.lang.RuntimeException: Errors running startup tasks:
+java.io.IOException: Failed to bind to /0.0.0.0:6876
+java.io.IOException: Failed to bind to /0.0.0.0:8123
+
+	at brs.util.ThreadPool.runAll(ThreadPool.java:181)
+	at brs.util.ThreadPool.start(ThreadPool.java:88)
+	at brs.Burst.loadWallet(Burst.java:284)
+	at brs.Burst.init(Burst.java:169)
+	at brs.Burst.main(Burst.java:153)
+	at signum.Launcher.main(Launcher.java:52)
+[INFO] 2022-07-31 23:24:33 brs.Burst - Shutting down...

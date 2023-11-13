@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="50e7711c-f0ac-4f6a-8299-878152382ae3" name="signum">
+        <fileTransfer accessType="SFTP" host="43.135.26.222" port="22" sshConfigId="17762ac3-3bdc-418f-b6f0-7e1b82951f00" sshConfig="signum">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
